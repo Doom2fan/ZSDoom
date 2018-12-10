@@ -16,13 +16,16 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-version "3.6"
+class ZSDoom_SoundSpot : Actor {
+    override void Tick () { }
 
-// Common stuff
-#include "ZScript/ZSDoom/Constants.ZS"
+    states {
+    Spawn:
+        TNT1 A 1;
+        loop;
+    }
+}
 
-// Core
-#include "ZScript/ZSDoom/Core.ZS"
-#include "ZScript/ZSDoom/Thinker.ZS"
-#include "ZScript/ZSDoom/Actor/Mobj.ZS"
-#include "ZScript/ZSDoom/Actor/MobjInfo.ZS"
+class ZSDoom_SoundSystem {
+    
+}

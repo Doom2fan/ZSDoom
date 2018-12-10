@@ -16,13 +16,32 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-version "3.6"
+enum ZSDoom_MobjType {
 
-// Common stuff
-#include "ZScript/ZSDoom/Constants.ZS"
+};
 
-// Core
-#include "ZScript/ZSDoom/Core.ZS"
-#include "ZScript/ZSDoom/Thinker.ZS"
-#include "ZScript/ZSDoom/Actor/Mobj.ZS"
-#include "ZScript/ZSDoom/Actor/MobjInfo.ZS"
+class ZSDoom_MobjInfo : Object {
+    int doomednum;
+    int spawnstate;
+    int spawnhealth;
+    int seestate;
+    int seesound;
+    int reactiontime;
+    int attacksound;
+    int painstate;
+    int painchance;
+    int painsound;
+    int meleestate;
+    int missilestate;
+    int deathstate;
+    int xdeathstate;
+    int deathsound;
+    int speed;
+    int radius;
+    int height;
+    int mass;
+    int damage;
+    int activesound;
+    int flags;
+    int raisestate;
+}

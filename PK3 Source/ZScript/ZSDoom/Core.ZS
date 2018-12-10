@@ -16,10 +16,25 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-class ZSDoom_Core {
-    const MAXWADFILES = 20;
-    string wadFiles [MAXWADFILES];
+class ZSDoom_UserCMD : Object {
+    uint buttons;
+    int16 yaw;
+    int16 forwardmove;
+    int16 sidemove;
 
+    static ZSDoom_UserCMD FromGZDUserCmd (UserCmd gzdCMD) {
+        let cmd = new ('ZSDoom_UserCMD');
+
+        cmd.buttons     = gzdCMD.buttons;
+        cmd.yaw         = gzdCMD.yaw;
+        cmd.forwardmove = gzdCMD.forwardmove;
+        cmd.sidemove    = gzdCMD.sidemove;
+
+        return cmd;
+    }
+}
+
+class ZSDoom_Core : Thinker {
     enum GameAction {
         GA_Nothing,
         GA_LoadLevel,
@@ -34,11 +49,12 @@ class ZSDoom_Core {
     };
 
     GameAction curGameAction;
+    int gametic;
+    Array<ZSDoom_Mobj> mobjs;
 
-    void D_DoomMain () {
-        int p;
-        string file;
+    override void Tick () {
+        let cmd = ZSDoom_UserCMD.FromGZDUserCmd (players [consoleplayer].original_cmd);
 
-        IdentifyVersion ();
+
     }
 }

@@ -16,13 +16,6 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-version "3.6"
-
-// Common stuff
-#include "ZScript/ZSDoom/Constants.ZS"
-
-// Core
-#include "ZScript/ZSDoom/Core.ZS"
-#include "ZScript/ZSDoom/Thinker.ZS"
-#include "ZScript/ZSDoom/Actor/Mobj.ZS"
-#include "ZScript/ZSDoom/Actor/MobjInfo.ZS"
+class ZSDoom_Thinker : Object {
+    virtual void Tick () { }
+}
