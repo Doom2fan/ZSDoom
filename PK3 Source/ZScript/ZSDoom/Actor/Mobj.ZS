@@ -58,6 +58,19 @@ enum MobjFlags {
     MF_TRANSSHIFT = 26
 };
 
+class ZSDoom_StateFunction {
+    virtual void func (Object obj1, Object obj2) { }
+}
+
+class ZSDoom_State : Object {
+    int sprite;
+    int frame;
+    int tics;
+    ZSDoom_StateFunction actFunc;
+    ZSDoom_State nextState;
+    int misc1, misc2;
+}
+
 // Map Object definition.
 class ZSDoom_Mobj : ZSDoom_Thinker {
     Vector3 pos;
@@ -94,7 +107,7 @@ class ZSDoom_Mobj : ZSDoom_Thinker {
     ZSDoom_MobjInfo info; // mobjinfo[mobj.type]
 
     int          tics;   // state tic counter
-    //ZSDoom_State state;
+    ZSDoom_State state;
     int          flags;
     int          health;
 
