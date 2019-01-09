@@ -1,6 +1,7 @@
 /*
  *  ZSDoom - A Doom port written in ZScript
- *  Copyright (C) 2018 Chronos "phantombeta" Ouroboros
+ *  Copyright (C) 1993-1996 Id Software
+ *  Copyright (C) 2018      Chronos "phantombeta" Ouroboros
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
